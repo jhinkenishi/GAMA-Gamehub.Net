@@ -11,8 +11,8 @@ namespace GAMA_Gamehub.view
     public delegate void RemoveToCartHandler(int productId);
     public interface IProductView : GGView
     {
-        event BuyNowHandler? OnBuyNow;
-        event AddToCartHandler? OnAddToCart;
-        event RemoveToCartHandler? OnRemoveToCart;
+        event BuyNowHandler OnBuyNow;
+        event AddToCartHandler OnAddToCart;
+        event RemoveToCartHandler OnRemoveToCart;
     }
 }

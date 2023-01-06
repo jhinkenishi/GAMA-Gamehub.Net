@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GAMA_Gamehub.test;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,9 @@ namespace GAMA_Gamehub.Net
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run();
+            Context context = new Context();
+            TestUserController controller = new TestUserController(new TestUser(), context.GetCurrentView());
+            Application.Run(context);
 
         }
     }

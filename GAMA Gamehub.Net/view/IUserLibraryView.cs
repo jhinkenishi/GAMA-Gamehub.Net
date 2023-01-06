@@ -9,6 +9,6 @@ namespace GAMA_Gamehub.view
     public delegate void PlayHandler(string productId);
     public interface IUserLibraryView : ILibraryView
     {
-        event PlayHandler? OnPlay;
+        event PlayHandler OnPlay;
     }
 }

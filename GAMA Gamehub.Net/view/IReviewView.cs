@@ -12,9 +12,9 @@ namespace GAMA_Gamehub.view
 
     public interface IReviewView : GGView
     {
-        event LikeHandler? OnLike;
-        event DislikeHandler? OnDislike;
-        event CommentHandler? OnComment;
+        event LikeHandler OnLike;
+        event DislikeHandler OnDislike;
+        event CommentHandler OnComment;
 
     }
 }

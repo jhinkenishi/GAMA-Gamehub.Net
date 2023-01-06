@@ -11,7 +11,7 @@ namespace GAMA_Gamehub.view
 
     public interface IStoreView : ILibraryView
     {
-        event SearchHandlerByProductId? OnSearchByProductId;
-        event SearchHandlerByProductName? OnSearchByProductName;
+        event SearchHandlerByProductId OnSearchByProductId;
+        event SearchHandlerByProductName OnSearchByProductName;
     }
 }

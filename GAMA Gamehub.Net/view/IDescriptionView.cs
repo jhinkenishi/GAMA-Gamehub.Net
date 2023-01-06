@@ -10,8 +10,8 @@ namespace GAMA_Gamehub.view
     public delegate void ShowDescriptionsHandler(int productId);
     public interface IDescriptionView : GGView
     {
-        event ShowDescriptionHandler? OnShowDescription;
-        event ShowDescriptionsHandler? OnShowDescriptions;
+        event ShowDescriptionHandler OnShowDescription;
+        event ShowDescriptionsHandler OnShowDescriptions;
 
 
     }

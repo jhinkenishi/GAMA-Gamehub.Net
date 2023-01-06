@@ -21,10 +21,10 @@ namespace GAMA_Gamehub.view.test
             InitializeComponent();
         }
 
-        public event RegisterHandler? OnRegister;
-        public event RegisterHandler? OnUnregister;
-        public event LoginHandler? OnLogin;
-        public event LoginHandler? OnLogoff;
+        public event RegisterHandler OnRegister;
+        public event RegisterHandler OnUnregister;
+        public event LoginHandler OnLogin;
+        public event LoginHandler OnLogoff;
 
         private void btnRegister_Click(object sender, EventArgs e)
         {

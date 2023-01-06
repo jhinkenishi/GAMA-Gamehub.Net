@@ -15,11 +15,11 @@ namespace GAMA_Gamehub.view
 
     public interface ILibraryView : GGView
     {
-        event InsertProductHandler? OnInsert;
-        event DeleteProductHandlerById? OnDelete;
-        event DeleteProductHandlerByName? OnDeleteByName;
-        event UpdateProductHandlerById? OnUpdateProductById;
-        event UpdateProductHandlerByName? OnUpdateProductByName;
-        event SelectProductHandler? OnSelectProductHandler;
+        event InsertProductHandler OnInsert;
+        event DeleteProductHandlerById OnDelete;
+        event DeleteProductHandlerByName OnDeleteByName;
+        event UpdateProductHandlerById OnUpdateProductById;
+        event UpdateProductHandlerByName OnUpdateProductByName;
+        event SelectProductHandler OnSelectProductHandler;
     }
 }

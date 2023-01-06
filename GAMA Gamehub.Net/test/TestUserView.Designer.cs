@@ -1,4 +1,6 @@
-﻿namespace GAMA_Gamehub.view.test
+﻿using System.Windows.Forms;
+
+namespace GAMA_Gamehub.view.test
 {
     partial class TestUserView
     {

@@ -12,9 +12,9 @@ namespace GAMA_Gamehub.view
     public interface IAccountView : GGView
     {
 
-        public event RegisterHandler? OnRegister;
-        public event RegisterHandler? OnUnregister;
-        public event LoginHandler? OnLogin;
-        public event LoginHandler? OnLogoff;
+        event RegisterHandler OnRegister;
+        event RegisterHandler OnUnregister;
+        event LoginHandler OnLogin;
+        event LoginHandler OnLogoff;
     }
 }

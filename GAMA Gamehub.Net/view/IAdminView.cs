@@ -10,7 +10,7 @@ namespace GAMA_Gamehub.view
     public delegate void QueryHandler(string query);
     public interface IAdminView : GGView
     {
-        event ChooseTableHandler? OnChooseTable;
-        event QueryHandler? OnQuery;
+        event ChooseTableHandler OnChooseTable;
+        event QueryHandler OnQuery;
     }
 }

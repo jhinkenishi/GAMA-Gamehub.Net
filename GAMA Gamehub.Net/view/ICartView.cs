@@ -9,6 +9,6 @@ namespace GAMA_Gamehub.view
     public delegate void CheckoutHandler(string userId);
     public interface ICartView : ILibraryView
     {
-        event CheckoutHandler? OnCheckout;
+        event CheckoutHandler OnCheckout;
     }
 }

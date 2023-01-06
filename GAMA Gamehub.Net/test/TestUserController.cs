@@ -3,14 +3,15 @@ using GAMA_Gamehub.model;
 using GAMA_Gamehub.model.account;
 using GAMA_Gamehub.view;
 using GAMA_Gamehub.view.test;
+using System.Drawing;
 
 namespace GAMA_Gamehub.test
 {
     public class TestUserController : AccountController
     {
 
-        private User? user;
-        private IAccountView? accountView;
+        private User user;
+        private IAccountView accountView;
         public TestUserController(GGModel model, GGView view) : base(model, view)
         {
             if (Model is User)
@@ -50,7 +51,7 @@ namespace GAMA_Gamehub.test
             if (View is TestUserView)
             {
                 TestUserView userPage = (TestUserView)View;
-                userPage.BackColor = Color.Green;
+                userPage.BackColor =Color.Green;
             }
             Register();
         }

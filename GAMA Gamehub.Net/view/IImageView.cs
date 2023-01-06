@@ -10,7 +10,7 @@ namespace GAMA_Gamehub.view
     public delegate void ShowImagesHandler(int productId);
     public interface IImageView :GGView
     {
-        event ShowImageHandler? OnShowImage;
-        event ShowImagesHandler? OnShowImages;
+        event ShowImageHandler OnShowImage;
+        event ShowImagesHandler OnShowImages;
     }
 }

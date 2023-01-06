@@ -17,9 +17,9 @@ namespace GAMA_Gamehub.database
         public const string PORT = "3306";
         public const string PASSWORD = "";
 
-        private MySqlConnection? connection;
-        private MySqlCommand? command;
-        private MySqlDataReader? reader;
+        private MySqlConnection connection;
+        private MySqlCommand command;
+        private MySqlDataReader reader;
         private static Database instance;
         private Database() { }
 
