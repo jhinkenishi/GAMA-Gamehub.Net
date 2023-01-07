@@ -43,17 +43,19 @@
             this.gameImageBox = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
+            this.lblPublisher = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.lblPublisher = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameImageBox)).BeginInit();
+            this.flowLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -187,9 +189,7 @@
             this.flowLayoutPanel3.Controls.Add(this.lblDescription);
             this.flowLayoutPanel3.Controls.Add(this.lblPublisher);
             this.flowLayoutPanel3.Controls.Add(this.lblPrice);
-            this.flowLayoutPanel3.Controls.Add(this.button1);
-            this.flowLayoutPanel3.Controls.Add(this.button2);
-            this.flowLayoutPanel3.Controls.Add(this.button3);
+            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel5);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(324, 45);
@@ -230,6 +230,15 @@
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "Description";
             // 
+            // lblPublisher
+            // 
+            this.lblPublisher.AutoSize = true;
+            this.lblPublisher.Location = new System.Drawing.Point(3, 228);
+            this.lblPublisher.Name = "lblPublisher";
+            this.lblPublisher.Size = new System.Drawing.Size(50, 13);
+            this.lblPublisher.TabIndex = 6;
+            this.lblPublisher.Text = "Publisher";
+            // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
@@ -240,9 +249,20 @@
             this.lblPrice.TabIndex = 5;
             this.lblPrice.Text = "Price";
             // 
+            // flowLayoutPanel5
+            // 
+            this.flowLayoutPanel5.Controls.Add(this.button1);
+            this.flowLayoutPanel5.Controls.Add(this.button2);
+            this.flowLayoutPanel5.Controls.Add(this.button3);
+            this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 259);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(500, 100);
+            this.flowLayoutPanel5.TabIndex = 7;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 259);
+            this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -252,7 +272,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(3, 288);
+            this.button2.Location = new System.Drawing.Point(84, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -262,21 +282,12 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(3, 317);
+            this.button3.Location = new System.Drawing.Point(165, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 0;
             this.button3.Text = "Review";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // lblPublisher
-            // 
-            this.lblPublisher.AutoSize = true;
-            this.lblPublisher.Location = new System.Drawing.Point(3, 228);
-            this.lblPublisher.Name = "lblPublisher";
-            this.lblPublisher.Size = new System.Drawing.Size(50, 13);
-            this.lblPublisher.TabIndex = 6;
-            this.lblPublisher.Text = "Publisher";
             // 
             // Homepage
             // 
@@ -296,6 +307,7 @@
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameImageBox)).EndInit();
+            this.flowLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +335,6 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblPublisher;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
     }
 }

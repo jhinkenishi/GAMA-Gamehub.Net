@@ -1,4 +1,6 @@
-﻿using GAMA_Gamehub.Net.Properties;
+﻿using GAMA_Gamehub.Net;
+using GAMA_Gamehub.Net.model;
+using GAMA_Gamehub.Net.Properties;
 using GAMA_Gamehub.Net.view;
 using GAMA_Gamehub.Net.view.controls;
 using GAMA_Gamehub.Net.view.database;
@@ -11,9 +13,11 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GAMA_Gamehub.view.panel
@@ -22,17 +26,15 @@ namespace GAMA_Gamehub.view.panel
     {
         private Context context;
         private GGDatabase database;
-        private List<string> list = new List<string>();
-        private List<string> productIDs = new List<string>();
-        private List<string> titles = new List<string>();
-        private List<string> prices = new List<string>();
-        private List<string> descs = new List<string>();
-        private List<string> imgs = new List<string>();
-        private List<string> publishers = new List<string>();
+        private List<string> gameNames = new List<string>();
+        private List<Game> games = new List<Game>();
+        private List<GameImage> gameImages = new List<GameImage>();
+        private List<GamePublisher> gamePublishers = new List<GamePublisher>();
+        private List<GGImage> images = new List<GGImage>();
+        private List<Publisher> publishers = new List<Publisher>();
 
-        private List<string> dynamicPIDs = new List<string>();
-        private List<string> dynamicTitles = new List<string>();
-        private List<string> dynamicPrices = new List<string>();
+        private int selectedIndex  = 0;
+
 
         public Homepage(Context context)
         {
@@ -40,7 +42,10 @@ namespace GAMA_Gamehub.view.panel
             Dock = DockStyle.Fill;
             this.context = context;
             InitializeComponent();
-            
+            if (context.GetStatus() == Context.LoginStatus.LOGON)
+            {
+                btnAccount.Text = "View your Account";
+            }
 
 
         }
@@ -55,8 +60,11 @@ namespace GAMA_Gamehub.view.panel
             }
             else
             {
-                btnAccount.Text = "Logout";
+                context.Controls.Clear();
+                context.Controls.Add(new AccountPage(context));
             }
+           
+           
          
         }
 
@@ -75,21 +83,51 @@ namespace GAMA_Gamehub.view.panel
         private void load(object sender, EventArgs e)
         {
 
-            MySqlDataReader reader = database.QueryFirstRow("SELECT product_id, name, price, description, image_path, publisher FROM product");
+            MySqlDataReader reader = database.QueryFirstRow("SELECT * FROM game");
             while (reader.Read())
             {
-                productIDs.Add(reader[0].ToString());
-                titles.Add(reader[1].ToString());
-                prices.Add(reader[2].ToString());
-                list.Add(reader[1].ToString());
-                descs.Add(reader[3].ToString());
-                imgs.Add(reader[4].ToString());
-                publishers.Add(reader[5].ToString());
+                games.Add(new Game(int.Parse(reader[0].ToString()), int.Parse(reader[1].ToString()), reader[2].ToString()));
+                gameNames.Add(reader[2].ToString());
             }
-            foreach(string item in list)
+
+            //reader.Close();
+
+
+            reader = database.QueryFirstRow("SELECT * FROM publisher");
+            while (reader.Read())
+            {
+                publishers.Add(new Publisher(int.Parse(reader[0].ToString()), reader[1].ToString()));
+            }
+           // reader.Close();
+
+            reader = database.QueryFirstRow("SELECT * FROM image");
+
+            while (reader.Read())
+            {
+                images.Add(new GGImage(int.Parse(reader[0].ToString()), reader[1].ToString()));
+            }
+            //reader.Close();
+
+            reader = database.QueryFirstRow("SELECT * FROM game_image");
+            while (reader.Read())
+            {
+                gameImages.Add(new GameImage(int.Parse(reader[0].ToString()), int.Parse(reader[1].ToString()), int.Parse(reader[2].ToString())));
+            }
+
+            reader = database.QueryFirstRow("SELECT * FROM game_publisher");
+            while (reader.Read())
+            {
+                gamePublishers.Add(new GamePublisher(int.Parse(reader[0].ToString()), int.Parse(reader[1].ToString()), int.Parse(reader[2].ToString())));
+
+            }
+
+            foreach (string item in gameNames)
             {
                 listBoxGames.Items.Add(item);
             }
+            MessageBox.Show("Finish loading");
+            reader.Close();
+            
 
         }
 
@@ -102,10 +140,7 @@ namespace GAMA_Gamehub.view.panel
         {
             string search = searchbox.Text;
             listBoxGames.Items.Clear();
-            dynamicPIDs.Clear();
-            dynamicPrices.Clear();
-            dynamicTitles.Clear();
-            foreach (string item in list)
+            foreach (string item in gameNames)
             {
                 if (item.StartsWith(search, StringComparison.CurrentCultureIgnoreCase))
                 {
@@ -118,35 +153,89 @@ namespace GAMA_Gamehub.view.panel
 
         private void OnSelectedIndex(object sender, EventArgs e)
         {
-            lblTitle.Text = titles[listBoxGames.SelectedIndex];
-            lblDescription.Text = descs[listBoxGames.SelectedIndex];
-            lblPublisher.Text = "Publish by: " + publishers[listBoxGames.SelectedIndex];
-            lblPrice.Text = "Price: ₱" + prices[listBoxGames.SelectedIndex];
-            try
-            {
-                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
-                string imagePath = Path.Combine(baseDirectory, imgs[listBoxGames.SelectedIndex]);
+            selectedIndex = listBoxGames.SelectedIndex;
+            lblTitle.Text = gameNames[selectedIndex];
 
-                Image image = Image.FromFile(imagePath);
-                gameImageBox.Image = image;
-            }
-            catch(Exception)
+            int selectedGameId = games[selectedIndex].Id;
+
+            //
+            foreach(GamePublisher gp in gamePublishers)
             {
-                gameImageBox.Image = null;
+                if (gp.GameId.Equals(selectedGameId))
+                {
+                    int publisherId = gp.PublisherId;
+                    foreach(Publisher pb in publishers)
+                    {
+                        if (pb.Id.Equals(publisherId))
+                        {
+                            lblPublisher.Text = "Published by: " + pb.PublisherName;
+                        }
+                    }
+                }
             }
-    
+            //
+            foreach (GameImage gi in gameImages)
+            {
+                if (gi.GameId.Equals(selectedGameId))
+                {
+                    int gameId = gi.GameId;
+                    foreach (GGImage gimage in images)
+                    {
+                        if (gimage.Id.Equals(gameId))
+                        {
+
+                            try
+                            {
+                                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+          
+                                string imagePath = Path.Combine(baseDirectory, gimage.Image_path);
+
+                                System.Drawing.Image image = System.Drawing.Image.FromFile(imagePath);
+                                gameImageBox.Image = image;
+                            }
+                            catch(Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                                gameImageBox.Image = null;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            context.Controls.Clear();
-            context.Controls.Add(new BuyNowPage(context));
+            if(context.GetStatus() == Context.LoginStatus.LOGON)
+            {
+                context.Controls.Clear();
+                context.Controls.Add(new BuyNowPage(context));
+            }
+            else
+            {
+                context.Controls.Clear();
+                context.Controls.Add(new LoginPage(context));
+            }
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            context.Controls.Clear();
-            context.Controls.Add(new AddToCartPage(context));
+            if (context.GetStatus() == Context.LoginStatus.LOGON)
+            {
+                context.Controls.Clear();
+                context.Controls.Add(new AddToCartPage(context));
+
+            }
+            else
+            {
+                context.Controls.Clear();
+                context.Controls.Add(new LoginPage(context));
+            }
+            
         }
 
   

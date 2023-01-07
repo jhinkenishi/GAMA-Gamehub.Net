@@ -148,6 +148,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="model\Game.cs" />
+    <Compile Include="model\GameImage.cs" />
+    <Compile Include="model\GamePublisher.cs" />
+    <Compile Include="model\GGImage.cs" />
+    <Compile Include="model\Publisher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="view\AddToCartPage.cs">
@@ -155,6 +160,12 @@
     </Compile>
     <Compile Include="view\AddToCartPage.Designer.cs">
       <DependentUpon>AddToCartPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\AccountPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\AccountPage.Designer.cs">
+      <DependentUpon>AccountPage.cs</DependentUpon>
     </Compile>
     <Compile Include="view\controls\AdminAddProduct.cs">
       <SubType>UserControl</SubType>
@@ -258,6 +269,9 @@
     </Compile>
     <EmbeddedResource Include="view\AddToCartPage.resx">
       <DependentUpon>AddToCartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\AccountPage.resx">
+      <DependentUpon>AccountPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\controls\AdminAddProduct.resx">
       <DependentUpon>AdminAddProduct.cs</DependentUpon>

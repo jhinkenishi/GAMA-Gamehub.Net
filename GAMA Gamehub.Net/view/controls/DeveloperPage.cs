@@ -1,6 +1,7 @@
 ﻿using GAMA_Gamehub.Net.Properties;
 using GAMA_Gamehub.Net.view.database;
 using GAMA_Gamehub.view.panel;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,7 @@ namespace GAMA_Gamehub.Net.view.controls
         private List<string> filepaths = new List<string>();
         private string relativeImagePath = "resource/images/";
         private string fileName;
+        private List<string> publishedGames = new List<string>();
         public DeveloperPage(Context context)
         {
             Dock = DockStyle.Fill;
@@ -102,10 +104,11 @@ namespace GAMA_Gamehub.Net.view.controls
             }
             else
             {
-
-                database.Query(String.Format("INSERT INTO product (name, publisher, price, description, image_path) VALUES ('{0}', '{1}','{2}', '{3}', '{4}')", name, publisher, price, description, relativeImagePath + fileName));
+                database.Query(String.Format("INSERT INTO game (game_name) VALUES ('{0}')", name));
+                //database.Query(String.Format("INSERT INTO product (name, publisher, price, description, image_path) VALUES ('{0}', '{1}','{2}', '{3}', '{4}')", name, publisher, price, description, relativeImagePath + fileName));
                 context.Controls.Clear();
                 context.Controls.Add(new Homepage(context));
+                lstBoxGamesPublished.Items.Clear();
             }
 
 
@@ -113,6 +116,33 @@ namespace GAMA_Gamehub.Net.view.controls
 
      
 
+        }
+    
+
+        private void Loader(object sender, EventArgs e)
+        {
+            MySqlDataReader reader = database.QueryFirstRow(String.Format("SELECT name, publisher FROM product where publisher='{0}'", context.GetLogonUsername()));
+            while (reader.Read())
+            {
+                lstBoxGamesPublished.Items.Add(reader[0].ToString());
+            }
+
+        }
+
+        private void MouseDonw(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                DialogResult result = MessageBox.Show("Edit Mode?", "Confirm", MessageBoxButtons.YesNo);
+                if(result == DialogResult.Yes)
+                {
+                    MessageBox.Show("Haha!, You'got prnked");
+                }
+                else
+                {
+                    MessageBox.Show("Huh!, You don't wnna see");
+                }
+            }
         }
     }
 }

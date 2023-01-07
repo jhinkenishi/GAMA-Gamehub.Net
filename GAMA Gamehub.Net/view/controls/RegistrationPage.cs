@@ -30,6 +30,7 @@ namespace GAMA_Gamehub.view.controls
             string email = txtboxEmail.Text;
             string username = txtboxUsername.Text;
             string password = txtboxPassword.Text;
+            string errorMessage;
 
             if (!ValidateEmail(email) || !ValidateUsername(username) || IsPasswordValid(password))
             {

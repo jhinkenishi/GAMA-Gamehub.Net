@@ -43,12 +43,15 @@
             this.inptPrice = new System.Windows.Forms.NumericUpDown();
             this.btnPublish = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lstBoxGamesPublished = new System.Windows.Forms.ListBox();
             this.fileManager = new System.Windows.Forms.OpenFileDialog();
             this.gameImagesLIst = new System.Windows.Forms.ImageList(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gamePic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inptPrice)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -197,12 +200,35 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.Gray;
+            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Controls.Add(this.lstBoxGamesPublished);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 38);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(376, 421);
             this.flowLayoutPanel2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "You published Games";
+            // 
+            // lstBoxGamesPublished
+            // 
+            this.lstBoxGamesPublished.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lstBoxGamesPublished.FormattingEnabled = true;
+            this.lstBoxGamesPublished.Location = new System.Drawing.Point(3, 23);
+            this.lstBoxGamesPublished.Name = "lstBoxGamesPublished";
+            this.lstBoxGamesPublished.Size = new System.Drawing.Size(364, 368);
+            this.lstBoxGamesPublished.TabIndex = 1;
+            this.lstBoxGamesPublished.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDonw);
             // 
             // fileManager
             // 
@@ -226,12 +252,15 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DeveloperPage";
             this.Size = new System.Drawing.Size(765, 462);
+            this.Load += new System.EventHandler(this.Loader);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gamePic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inptPrice)).EndInit();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +283,7 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.NumericUpDown inptPrice;
         private System.Windows.Forms.ImageList gameImagesLIst;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lstBoxGamesPublished;
     }
 }
