@@ -87,7 +87,7 @@ namespace GAMA_Gamehub.Net.view.controls
             {
                if(name == "")
                 {
-                    MessageBox.Show("No Image Specified");
+                    MessageBox.Show("No Name Specified");
                 }else if(publisher == "")
                 {
                     MessageBox.Show("You are not login!");
