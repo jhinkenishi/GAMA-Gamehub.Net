@@ -17,7 +17,7 @@ namespace GAMA_Gamehub.Net.view.database
 
         public void Query(string sql)
         {
-            connection = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gama_gamehub;Connection Timeout=60;Max Pool Size=100");
+            connection = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gama_gamehub");
             command = new MySqlCommand(sql, connection);
             try
             {
@@ -33,7 +33,7 @@ namespace GAMA_Gamehub.Net.view.database
             }
         }
         public MySqlDataReader QueryFirstRow(string sql) {
-            MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gama_gamehub;Connection Timeout=60;Max Pool Size=100");
+            MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gama_gamehub");
             MySqlCommand command = new MySqlCommand(sql, connection);
             try
             {
@@ -45,8 +45,9 @@ namespace GAMA_Gamehub.Net.view.database
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
+                return null;
+
             }
-            return null;
         }
    
         public static GGDatabase GetInstance()

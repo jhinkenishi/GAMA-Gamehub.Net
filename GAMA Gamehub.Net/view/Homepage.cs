@@ -83,14 +83,14 @@ namespace GAMA_Gamehub.view.panel
         private void load(object sender, EventArgs e)
         {
 
-            MySqlDataReader reader = database.QueryFirstRow("SELECT * FROM game");
+            MySqlDataReader reader = database.QueryFirstRow("SELECT *  FROM game");
             while (reader.Read())
             {
-                games.Add(new Game(int.Parse(reader[0].ToString()), int.Parse(reader[1].ToString()), reader[2].ToString()));
+                games.Add(new Game(reader.GetInt32(0), reader.GetInt16(1), reader.GetString(2), reader.GetDouble(3), reader.GetDouble(4), reader.GetInt16(5)));
                 gameNames.Add(reader[2].ToString());
             }
 
-            //reader.Close();
+           // reader.Close();
 
 
             reader = database.QueryFirstRow("SELECT * FROM publisher");
@@ -139,14 +139,28 @@ namespace GAMA_Gamehub.view.panel
         private void OnTextChange(object sender, EventArgs e)
         {
             string search = searchbox.Text;
+            //foreach (string item in gameNames)
+            //{
+            //    if (item.StartsWith(search, StringComparison.CurrentCultureIgnoreCase))
+            //    {
+            //        listBoxGames.Items.Add(item);
+            //    }
+            //}
             listBoxGames.Items.Clear();
-            foreach (string item in gameNames)
+            games.Clear();
+            MySqlDataReader reader = database.QueryFirstRow(String.Format("SELECT * FROM game where game_name LIKE '{0}%'", search));
+            while (reader.Read())
             {
-                if (item.StartsWith(search, StringComparison.CurrentCultureIgnoreCase))
-                {
-                    listBoxGames.Items.Add(item);
-                }
+                int id = reader.GetInt32(0);
+                int genreId = reader.GetInt32(1);
+                string name = reader.GetString(2);
+                double rating = reader.GetDouble(3);
+                double price = reader.GetDouble(4);
+                int sold = reader.GetInt32(5);
+                games.Add(new Game(id, genreId, name, rating, price, sold));
+                listBoxGames.Items.Add(reader.GetString(2));
             }
+            reader.Close();
 
 
         }
@@ -154,8 +168,8 @@ namespace GAMA_Gamehub.view.panel
         private void OnSelectedIndex(object sender, EventArgs e)
         {
             selectedIndex = listBoxGames.SelectedIndex;
-            lblTitle.Text = gameNames[selectedIndex];
-
+            lblTitle.Text = games[selectedIndex].Name;
+            lblPrice.Text = "Price: $" + games[selectedIndex].Price;
             int selectedGameId = games[selectedIndex].Id;
 
             //
@@ -169,6 +183,7 @@ namespace GAMA_Gamehub.view.panel
                         if (pb.Id.Equals(publisherId))
                         {
                             lblPublisher.Text = "Published by: " + pb.PublisherName;
+                            
                         }
                     }
                 }
@@ -179,6 +194,7 @@ namespace GAMA_Gamehub.view.panel
                 if (gi.GameId.Equals(selectedGameId))
                 {
                     int gameId = gi.GameId;
+
                     foreach (GGImage gimage in images)
                     {
                         if (gimage.Id.Equals(gameId))
@@ -186,12 +202,19 @@ namespace GAMA_Gamehub.view.panel
 
                             try
                             {
-                                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                                string baseDirectory = Environment.CurrentDirectory;
           
-                                string imagePath = Path.Combine(baseDirectory, gimage.Image_path);
-
-                                System.Drawing.Image image = System.Drawing.Image.FromFile(imagePath);
-                                gameImageBox.Image = image;
+                                string imagePath = Path.Combine(baseDirectory, gimage.ImagePath);
+                                if (gimage.ImagePath.Equals(""))
+                                {
+                                    MessageBox.Show("Hello Worldd");
+                                    gameImageBox.Image = null;
+                                }
+                                else
+                                {
+                                    System.Drawing.Image image = System.Drawing.Image.FromFile(imagePath);
+                                    gameImageBox.Image = image;
+                                }
                             }
                             catch(Exception ex)
                             {

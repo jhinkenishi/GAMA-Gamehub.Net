@@ -58,7 +58,7 @@ namespace GAMA_Gamehub.Net.view.controls
             {
                 Directory.CreateDirectory(targetFolder);
             }
-
+            MessageBox.Show(targetFolder);
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
             fileName = $"image_{timestamp}.jpg";
             string targetPath = Path.Combine(targetFolder, fileName);
@@ -88,6 +88,7 @@ namespace GAMA_Gamehub.Net.view.controls
                if(name == "")
                 {
                     MessageBox.Show("No Name Specified");
+
                 }else if(publisher == "")
                 {
                     MessageBox.Show("You are not login!");
@@ -104,8 +105,9 @@ namespace GAMA_Gamehub.Net.view.controls
             }
             else
             {
-                database.Query(String.Format("INSERT INTO game (game_name) VALUES ('{0}')", name));
-                //database.Query(String.Format("INSERT INTO product (name, publisher, price, description, image_path) VALUES ('{0}', '{1}','{2}', '{3}', '{4}')", name, publisher, price, description, relativeImagePath + fileName));
+                database.Query(String.Format("INSERT INTO game (game_name, game_price) VALUES ('{0}', '{1}')", name, price));
+
+                //database.Query(String.Format("INSERT INTO product (name, publisher, price, description, imagePath) VALUES ('{0}', '{1}','{2}', '{3}', '{4}')", name, publisher, price, description, relativeImagePath + fileName));
                 context.Controls.Clear();
                 context.Controls.Add(new Homepage(context));
                 lstBoxGamesPublished.Items.Clear();

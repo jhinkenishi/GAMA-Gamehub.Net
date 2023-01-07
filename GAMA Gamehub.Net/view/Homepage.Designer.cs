@@ -186,9 +186,9 @@
             this.flowLayoutPanel3.BackColor = System.Drawing.Color.SteelBlue;
             this.flowLayoutPanel3.Controls.Add(this.gameImageBox);
             this.flowLayoutPanel3.Controls.Add(this.lblTitle);
-            this.flowLayoutPanel3.Controls.Add(this.lblDescription);
             this.flowLayoutPanel3.Controls.Add(this.lblPublisher);
             this.flowLayoutPanel3.Controls.Add(this.lblPrice);
+            this.flowLayoutPanel3.Controls.Add(this.lblDescription);
             this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel5);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -224,7 +224,7 @@
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(3, 202);
+            this.lblDescription.Location = new System.Drawing.Point(3, 248);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(121, 26);
             this.lblDescription.TabIndex = 2;
@@ -233,19 +233,20 @@
             // lblPublisher
             // 
             this.lblPublisher.AutoSize = true;
-            this.lblPublisher.Location = new System.Drawing.Point(3, 228);
+            this.lblPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPublisher.Location = new System.Drawing.Point(3, 202);
             this.lblPublisher.Name = "lblPublisher";
-            this.lblPublisher.Size = new System.Drawing.Size(50, 13);
+            this.lblPublisher.Size = new System.Drawing.Size(83, 20);
             this.lblPublisher.TabIndex = 6;
             this.lblPublisher.Text = "Publisher";
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(3, 241);
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(3, 222);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(35, 15);
+            this.lblPrice.Size = new System.Drawing.Size(67, 26);
             this.lblPrice.TabIndex = 5;
             this.lblPrice.Text = "Price";
             // 
@@ -255,7 +256,7 @@
             this.flowLayoutPanel5.Controls.Add(this.button2);
             this.flowLayoutPanel5.Controls.Add(this.button3);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 259);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 277);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(500, 100);
             this.flowLayoutPanel5.TabIndex = 7;

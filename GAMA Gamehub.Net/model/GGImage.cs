@@ -10,16 +10,16 @@ namespace GAMA_Gamehub.Net.model
     public class GGImage
     {
         private int id;
-        private string image_path;
+        private string imagePath;
 
         public GGImage(int id, string image_path)
         {
             this.id = id;
-            this.image_path = image_path;
+            this.imagePath = image_path;
         }
 
         public int Id { get => id; set => id = value; }
-        public string Image_path { get => image_path; set => image_path = value; }
+        public string ImagePath { get => imagePath; set => imagePath = value; }
         
     }
 }
