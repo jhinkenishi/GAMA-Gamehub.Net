@@ -161,103 +161,103 @@
     <Compile Include="view\AddToCartPage.Designer.cs">
       <DependentUpon>AddToCartPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\AccountPage.cs">
+    <Compile Include="view\AccountPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\AccountPage.Designer.cs">
+    <Compile Include="view\AccountPage.Designer.cs">
       <DependentUpon>AccountPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\AdminAddProduct.cs">
+    <Compile Include="view\AdminAddProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\AdminAddProduct.Designer.cs">
+    <Compile Include="view\AdminAddProduct.Designer.cs">
       <DependentUpon>AdminAddProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\AdminAddUser.cs">
+    <Compile Include="view\AdminAddUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\AdminAddUser.Designer.cs">
+    <Compile Include="view\AdminAddUser.Designer.cs">
       <DependentUpon>AdminAddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\AdminDeleteProduct.cs">
+    <Compile Include="view\AdminDeleteProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\AdminDeleteProduct.Designer.cs">
+    <Compile Include="view\AdminDeleteProduct.Designer.cs">
       <DependentUpon>AdminDeleteProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\AdminDeleteUser.cs">
+    <Compile Include="view\AdminDeleteUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\AdminDeleteUser.Designer.cs">
+    <Compile Include="view\AdminDeleteUser.Designer.cs">
       <DependentUpon>AdminDeleteUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\AdminEditProduct.cs">
+    <Compile Include="view\AdminEditProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\AdminEditProduct.Designer.cs">
+    <Compile Include="view\AdminEditProduct.Designer.cs">
       <DependentUpon>AdminEditProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\AdminEditUser.cs">
+    <Compile Include="view\AdminEditUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\AdminEditUser.Designer.cs">
+    <Compile Include="view\AdminEditUser.Designer.cs">
       <DependentUpon>AdminEditUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\AdminPage.cs">
+    <Compile Include="view\AdminPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\AdminPage.Designer.cs">
+    <Compile Include="view\AdminPage.Designer.cs">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\BuyNowPage.cs">
+    <Compile Include="view\BuyNowPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\BuyNowPage.Designer.cs">
+    <Compile Include="view\BuyNowPage.Designer.cs">
       <DependentUpon>BuyNowPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\Context.cs">
+    <Compile Include="view\Context.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\controls\Context.Designer.cs">
+    <Compile Include="view\Context.Designer.cs">
       <DependentUpon>Context.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\DeveloperPage.cs">
+    <Compile Include="view\DeveloperPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\DeveloperPage.Designer.cs">
+    <Compile Include="view\DeveloperPage.Designer.cs">
       <DependentUpon>DeveloperPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\GamePage.cs">
+    <Compile Include="view\GamePage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\GamePage.Designer.cs">
+    <Compile Include="view\GamePage.Designer.cs">
       <DependentUpon>GamePage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\Homepage.cs">
+    <Compile Include="view\Homepage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\Homepage.Designer.cs">
+    <Compile Include="view\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\LibraryPage.cs">
+    <Compile Include="view\LibraryPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\LibraryPage.Designer.cs">
+    <Compile Include="view\LibraryPage.Designer.cs">
       <DependentUpon>LibraryPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\LoginPage.cs">
+    <Compile Include="view\LoginPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\LoginPage.Designer.cs">
+    <Compile Include="view\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\controls\RegistrationPage.cs">
+    <Compile Include="view\RegistrationPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\controls\RegistrationPage.Designer.cs">
+    <Compile Include="view\RegistrationPage.Designer.cs">
       <DependentUpon>RegistrationPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\database\GGDatabase.cs" />
+    <Compile Include="database\GGDatabase.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -270,52 +270,52 @@
     <EmbeddedResource Include="view\AddToCartPage.resx">
       <DependentUpon>AddToCartPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\AccountPage.resx">
+    <EmbeddedResource Include="view\AccountPage.resx">
       <DependentUpon>AccountPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\AdminAddProduct.resx">
+    <EmbeddedResource Include="view\AdminAddProduct.resx">
       <DependentUpon>AdminAddProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\AdminAddUser.resx">
+    <EmbeddedResource Include="view\AdminAddUser.resx">
       <DependentUpon>AdminAddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\AdminDeleteProduct.resx">
+    <EmbeddedResource Include="view\AdminDeleteProduct.resx">
       <DependentUpon>AdminDeleteProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\AdminDeleteUser.resx">
+    <EmbeddedResource Include="view\AdminDeleteUser.resx">
       <DependentUpon>AdminDeleteUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\AdminEditProduct.resx">
+    <EmbeddedResource Include="view\AdminEditProduct.resx">
       <DependentUpon>AdminEditProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\AdminEditUser.resx">
+    <EmbeddedResource Include="view\AdminEditUser.resx">
       <DependentUpon>AdminEditUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\AdminPage.resx">
+    <EmbeddedResource Include="view\AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\BuyNowPage.resx">
+    <EmbeddedResource Include="view\BuyNowPage.resx">
       <DependentUpon>BuyNowPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\Context.resx">
+    <EmbeddedResource Include="view\Context.resx">
       <DependentUpon>Context.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\DeveloperPage.resx">
+    <EmbeddedResource Include="view\DeveloperPage.resx">
       <DependentUpon>DeveloperPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\GamePage.resx">
+    <EmbeddedResource Include="view\GamePage.resx">
       <DependentUpon>GamePage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\Homepage.resx">
+    <EmbeddedResource Include="view\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\LibraryPage.resx">
+    <EmbeddedResource Include="view\LibraryPage.resx">
       <DependentUpon>LibraryPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\LoginPage.resx">
+    <EmbeddedResource Include="view\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\controls\RegistrationPage.resx">
+    <EmbeddedResource Include="view\RegistrationPage.resx">
       <DependentUpon>RegistrationPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

@@ -196,9 +196,11 @@ namespace GAMA_Gamehub.view.panel
                             catch(Exception ex)
                             {
                                 MessageBox.Show(ex.Message);
-                                gameImageBox.Image = null;
                             }
                         }
+                       
+                        
+
                     }
                 }
             }
