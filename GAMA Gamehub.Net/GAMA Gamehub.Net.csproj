@@ -148,51 +148,61 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controller\account\AccountController.cs" />
-    <Compile Include="controller\account\AdminController.cs" />
-    <Compile Include="controller\account\UserController.cs" />
-    <Compile Include="controller\GGController.cs" />
-    <Compile Include="controller\library\CartController.cs" />
-    <Compile Include="controller\library\LibraryController.cs" />
-    <Compile Include="controller\library\StoreController.cs" />
-    <Compile Include="controller\library\UserLibraryController.cs" />
-    <Compile Include="controller\product\part\DescriptionController.cs" />
-    <Compile Include="controller\product\part\ImageController.cs" />
-    <Compile Include="controller\product\part\ProductPartController.cs" />
-    <Compile Include="controller\product\part\ReviewController.cs" />
-    <Compile Include="database\Database.cs" />
-    <Compile Include="database\DBData.cs" />
-    <Compile Include="view\controls\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\controls\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="model\account\Account.cs" />
-    <Compile Include="model\account\Admin.cs" />
-    <Compile Include="model\account\Publisher.cs" />
-    <Compile Include="model\account\User.cs" />
-    <Compile Include="model\GGModel.cs" />
-    <Compile Include="model\library\Cart.cs" />
-    <Compile Include="model\library\Library.cs" />
-    <Compile Include="model\library\Store.cs" />
-    <Compile Include="model\library\UserLibrary.cs" />
-    <Compile Include="model\product\part\Description.cs" />
-    <Compile Include="model\product\part\Image.cs" />
-    <Compile Include="model\product\part\ProductPart.cs" />
-    <Compile Include="model\product\part\Review.cs" />
-    <Compile Include="model\product\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="test\TestLibrary.cs" />
-    <Compile Include="test\TestUser.cs" />
-    <Compile Include="test\TestUserController.cs" />
-    <Compile Include="test\TestUserLibraryController.cs" />
-    <Compile Include="test\TestUserView.cs">
+    <Compile Include="view\AddToCartPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="test\TestUserView.Designer.cs">
-      <DependentUpon>TestUserView.cs</DependentUpon>
+    <Compile Include="view\AddToCartPage.Designer.cs">
+      <DependentUpon>AddToCartPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\AdminAddProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\AdminAddProduct.Designer.cs">
+      <DependentUpon>AdminAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\AdminAddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\AdminAddUser.Designer.cs">
+      <DependentUpon>AdminAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\AdminDeleteProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\AdminDeleteProduct.Designer.cs">
+      <DependentUpon>AdminDeleteProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\AdminDeleteUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\AdminDeleteUser.Designer.cs">
+      <DependentUpon>AdminDeleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\AdminEditProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\AdminEditProduct.Designer.cs">
+      <DependentUpon>AdminEditProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\AdminEditUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\AdminEditUser.Designer.cs">
+      <DependentUpon>AdminEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\AdminPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\AdminPage.Designer.cs">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\BuyNowPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\BuyNowPage.Designer.cs">
+      <DependentUpon>BuyNowPage.cs</DependentUpon>
     </Compile>
     <Compile Include="view\controls\Context.cs">
       <SubType>Form</SubType>
@@ -200,11 +210,29 @@
     <Compile Include="view\controls\Context.Designer.cs">
       <DependentUpon>Context.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\controls\DeveloperPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\DeveloperPage.Designer.cs">
+      <DependentUpon>DeveloperPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\GamePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\GamePage.Designer.cs">
+      <DependentUpon>GamePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\controls\Homepage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="view\controls\Homepage.Designer.cs">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\controls\LibraryPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\controls\LibraryPage.Designer.cs">
+      <DependentUpon>LibraryPage.cs</DependentUpon>
     </Compile>
     <Compile Include="view\controls\LoginPage.cs">
       <SubType>UserControl</SubType>
@@ -218,21 +246,7 @@
     <Compile Include="view\controls\RegistrationPage.Designer.cs">
       <DependentUpon>RegistrationPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\EmptyView.cs" />
-    <Compile Include="view\GGView.cs" />
-    <Compile Include="view\IAccountView.cs" />
-    <Compile Include="view\IAdminView.cs" />
-    <Compile Include="view\ICartView.cs" />
-    <Compile Include="view\IContext.cs" />
-    <Compile Include="view\IDescriptionView.cs" />
-    <Compile Include="view\IImageView.cs" />
-    <Compile Include="view\ILibraryView.cs" />
-    <Compile Include="view\IProductView.cs" />
-    <Compile Include="view\IPublisherView.cs" />
-    <Compile Include="view\IReviewView.cs" />
-    <Compile Include="view\IState.cs" />
-    <Compile Include="view\IStoreView.cs" />
-    <Compile Include="view\IUserLibraryView.cs" />
+    <Compile Include="view\database\GGDatabase.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -242,14 +256,47 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="test\TestUserView.resx">
-      <DependentUpon>TestUserView.cs</DependentUpon>
+    <EmbeddedResource Include="view\AddToCartPage.resx">
+      <DependentUpon>AddToCartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\AdminAddProduct.resx">
+      <DependentUpon>AdminAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\AdminAddUser.resx">
+      <DependentUpon>AdminAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\AdminDeleteProduct.resx">
+      <DependentUpon>AdminDeleteProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\AdminDeleteUser.resx">
+      <DependentUpon>AdminDeleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\AdminEditProduct.resx">
+      <DependentUpon>AdminEditProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\AdminEditUser.resx">
+      <DependentUpon>AdminEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\AdminPage.resx">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\BuyNowPage.resx">
+      <DependentUpon>BuyNowPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\controls\Context.resx">
       <DependentUpon>Context.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\DeveloperPage.resx">
+      <DependentUpon>DeveloperPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\GamePage.resx">
+      <DependentUpon>GamePage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\controls\Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\controls\LibraryPage.resx">
+      <DependentUpon>LibraryPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\controls\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
@@ -293,6 +340,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resource\images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

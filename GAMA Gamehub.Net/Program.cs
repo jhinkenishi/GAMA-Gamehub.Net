@@ -1,4 +1,5 @@
-﻿using GAMA_Gamehub.test;
+﻿
+using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace GAMA_Gamehub.Net
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Context context = new Context();
-            TestUserController controller = new TestUserController(new TestUser(), context.GetCurrentView());
-            Application.Run(context);
+            Application.Run(new Context());
+
+
 
         }
     }

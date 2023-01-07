@@ -1,0 +1,58 @@
+﻿using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace GAMA_Gamehub.Net.view.database
+{
+    public class GGDatabase
+    {
+        private static GGDatabase instance;
+
+        public void Query(string sql)
+        {
+            MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gama_gamehub");
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                MessageBox.Show("Successful");
+                connection.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+        }
+        public MySqlDataReader QueryFirstRow(string sql) {
+            MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gama_gamehub");
+            MySqlCommand command = new MySqlCommand(sql, connection);
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+                return reader;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            return null;
+        }
+
+        public static GGDatabase GetInstance()
+        {
+            if(instance is null)
+            {
+                instance = new GGDatabase();
+            }
+            return instance;
+        }
+    }
+}

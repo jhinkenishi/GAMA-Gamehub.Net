@@ -1,6 +1,6 @@
 using GAMA_Gamehub.view;
+using GAMA_Gamehub.view.controls;
 using GAMA_Gamehub.view.panel;
-using GAMA_Gamehub.view.test;
 using System.Windows.Forms;
 
 namespace GAMA_Gamehub
@@ -9,26 +9,37 @@ namespace GAMA_Gamehub
     public partial class Context : Form
     {
         private Control view;
+        private LoginStatus status = LoginStatus.LOGOFF;
+        private string logUsername;
+
         public Context()
         {
-            view = new TestUserView(this);
-            SetCurrentView(view);
+            view = new Homepage(this);
             Controls.Add(view);
             InitializeComponent();
         }
 
-        public void SetCurrentView(Control view)
+        public void SetStatus(LoginStatus status)
         {
-            this.view = view;
+            this.status = status;
         }
-        public GGView GetCurrentView()
+        public string GetLogonUsername()
         {
-            if(view is GGView)
-            {
-                return (GGView)view;
-            }
-            return new EmptyView();
+            return this.logUsername;
         }
+        public void SetLogonUsername(string username)
+        {
+            this.logUsername = username;
+        }
+        public LoginStatus GetStatus()
+        {
+            return this.status;
+        }
+        public enum LoginStatus{
+            LOGON,
+            LOGOFF,
+        }
+
     }
 
 
