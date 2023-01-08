@@ -34,7 +34,7 @@ namespace GAMA_Gamehub.view.controls
 
             if (ValidateEmail(email) || ValidateUsername(username) || ValidatePassword(password) || password == confirmPassword)
             {
-                database.Query(String.Format("INSERT INTO users (email, username, password, login_status, user_type) VALUES ('{0}', '{1}','{2}', '{3}', '{4}')", email, username, password, 1, "basic"));
+                database.Query(String.Format("INSERT INTO game_users (email, username, password, login_status, user_type) VALUES ('{0}', '{1}','{2}', '{3}', '{4}')", email, username, password, 1, "basic"));
 
                 context.Controls.Clear();
                 context.Controls.Add(new Homepage(context));

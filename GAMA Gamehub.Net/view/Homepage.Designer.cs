@@ -39,35 +39,38 @@
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.listBoxGames = new System.Windows.Forms.ListBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.scrollPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.gameImageBox = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblPublisher = new System.Windows.Forms.Label();
+            this.rchDescription = new System.Windows.Forms.RichTextBox();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnCart = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
+            this.scrollPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameImageBox)).BeginInit();
             this.flowLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 321F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 476F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 19F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.scrollPanel, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -79,22 +82,25 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Controls.Add(this.btnCart);
             this.flowLayoutPanel1.Controls.Add(this.btnAccount);
             this.flowLayoutPanel1.Controls.Add(this.btnDev);
             this.flowLayoutPanel1.Controls.Add(this.btnAdmin);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(324, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(489, 36);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(470, 36);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // btnAccount
             // 
             this.btnAccount.AutoSize = true;
-            this.btnAccount.Location = new System.Drawing.Point(411, 3);
+            this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAccount.ForeColor = System.Drawing.Color.White;
+            this.btnAccount.Location = new System.Drawing.Point(311, 3);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(75, 23);
+            this.btnAccount.Size = new System.Drawing.Size(75, 25);
             this.btnAccount.TabIndex = 2;
             this.btnAccount.Text = "Login";
             this.btnAccount.UseVisualStyleBackColor = true;
@@ -103,9 +109,11 @@
             // btnDev
             // 
             this.btnDev.AutoSize = true;
-            this.btnDev.Location = new System.Drawing.Point(330, 3);
+            this.btnDev.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDev.ForeColor = System.Drawing.Color.White;
+            this.btnDev.Location = new System.Drawing.Point(230, 3);
             this.btnDev.Name = "btnDev";
-            this.btnDev.Size = new System.Drawing.Size(75, 23);
+            this.btnDev.Size = new System.Drawing.Size(75, 25);
             this.btnDev.TabIndex = 1;
             this.btnDev.Text = "Developer";
             this.btnDev.UseVisualStyleBackColor = true;
@@ -114,9 +122,11 @@
             // btnAdmin
             // 
             this.btnAdmin.AutoSize = true;
-            this.btnAdmin.Location = new System.Drawing.Point(249, 3);
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Location = new System.Drawing.Point(149, 3);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdmin.Size = new System.Drawing.Size(75, 25);
             this.btnAdmin.TabIndex = 0;
             this.btnAdmin.Text = "Admin";
             this.btnAdmin.UseVisualStyleBackColor = true;
@@ -124,9 +134,10 @@
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Black;
             this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Controls.Add(this.searchbox);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(315, 36);
@@ -152,13 +163,14 @@
             // 
             // flowLayoutPanel4
             // 
+            this.flowLayoutPanel4.BackColor = System.Drawing.Color.Black;
             this.flowLayoutPanel4.Controls.Add(this.label4);
             this.flowLayoutPanel4.Controls.Add(this.listBoxGames);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 45);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(315, 541);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(315, 563);
             this.flowLayoutPanel4.TabIndex = 4;
             // 
             // label4
@@ -184,30 +196,33 @@
             this.listBoxGames.TabIndex = 0;
             this.listBoxGames.SelectedIndexChanged += new System.EventHandler(this.OnSelectedIndex);
             // 
-            // flowLayoutPanel3
+            // scrollPanel
             // 
-            this.flowLayoutPanel3.BackColor = System.Drawing.Color.SteelBlue;
-            this.flowLayoutPanel3.Controls.Add(this.gameImageBox);
-            this.flowLayoutPanel3.Controls.Add(this.lblTitle);
-            this.flowLayoutPanel3.Controls.Add(this.lblPublisher);
-            this.flowLayoutPanel3.Controls.Add(this.lblPrice);
-            this.flowLayoutPanel3.Controls.Add(this.lblDescription);
-            this.flowLayoutPanel3.Controls.Add(this.flowLayoutPanel5);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(324, 45);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(489, 541);
-            this.flowLayoutPanel3.TabIndex = 5;
+            this.scrollPanel.AutoScroll = true;
+            this.scrollPanel.AutoSize = true;
+            this.scrollPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.scrollPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.scrollPanel.Controls.Add(this.gameImageBox);
+            this.scrollPanel.Controls.Add(this.lblTitle);
+            this.scrollPanel.Controls.Add(this.lblPublisher);
+            this.scrollPanel.Controls.Add(this.rchDescription);
+            this.scrollPanel.Controls.Add(this.lblPrice);
+            this.scrollPanel.Controls.Add(this.flowLayoutPanel5);
+            this.scrollPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scrollPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.scrollPanel.Location = new System.Drawing.Point(324, 45);
+            this.scrollPanel.Name = "scrollPanel";
+            this.scrollPanel.Size = new System.Drawing.Size(470, 563);
+            this.scrollPanel.TabIndex = 6;
             // 
             // gameImageBox
             // 
-            this.gameImageBox.BackColor = System.Drawing.Color.Tan;
+            this.gameImageBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.gameImageBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gameImageBox.Dock = System.Windows.Forms.DockStyle.Right;
             this.gameImageBox.Location = new System.Drawing.Point(3, 3);
             this.gameImageBox.Name = "gameImageBox";
-            this.gameImageBox.Size = new System.Drawing.Size(500, 159);
+            this.gameImageBox.Size = new System.Drawing.Size(460, 182);
             this.gameImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gameImageBox.TabIndex = 0;
             this.gameImageBox.TabStop = false;
@@ -218,7 +233,7 @@
             this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTitle.Location = new System.Drawing.Point(3, 165);
+            this.lblTitle.Location = new System.Drawing.Point(3, 188);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(82, 37);
             this.lblTitle.TabIndex = 1;
@@ -228,45 +243,52 @@
             // 
             this.lblPublisher.AutoSize = true;
             this.lblPublisher.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPublisher.Location = new System.Drawing.Point(3, 202);
+            this.lblPublisher.Location = new System.Drawing.Point(3, 225);
             this.lblPublisher.Name = "lblPublisher";
             this.lblPublisher.Size = new System.Drawing.Size(83, 20);
             this.lblPublisher.TabIndex = 6;
             this.lblPublisher.Text = "Publisher";
             // 
+            // rchDescription
+            // 
+            this.rchDescription.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.rchDescription.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rchDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rchDescription.Location = new System.Drawing.Point(3, 248);
+            this.rchDescription.Name = "rchDescription";
+            this.rchDescription.ReadOnly = true;
+            this.rchDescription.Size = new System.Drawing.Size(460, 69);
+            this.rchDescription.TabIndex = 8;
+            this.rchDescription.Text = "";
+            // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(3, 222);
+            this.lblPrice.ForeColor = System.Drawing.Color.Yellow;
+            this.lblPrice.Location = new System.Drawing.Point(3, 320);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(67, 26);
             this.lblPrice.TabIndex = 5;
             this.lblPrice.Text = "Price";
             // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(3, 248);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(121, 26);
-            this.lblDescription.TabIndex = 2;
-            this.lblDescription.Text = "Description";
-            // 
             // flowLayoutPanel5
             // 
+            this.flowLayoutPanel5.AutoSize = true;
+            this.flowLayoutPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel5.Controls.Add(this.button1);
             this.flowLayoutPanel5.Controls.Add(this.button2);
             this.flowLayoutPanel5.Controls.Add(this.button3);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 277);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 349);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(500, 100);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(460, 29);
             this.flowLayoutPanel5.TabIndex = 7;
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
@@ -277,6 +299,8 @@
             // 
             // button2
             // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(84, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -287,12 +311,29 @@
             // 
             // button3
             // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(165, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 0;
             this.button3.Text = "Review";
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnCart
+            // 
+            this.btnCart.AutoSize = true;
+            this.btnCart.FlatAppearance.BorderColor = System.Drawing.Color.Yellow;
+            this.btnCart.FlatAppearance.BorderSize = 2;
+            this.btnCart.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCart.ForeColor = System.Drawing.Color.White;
+            this.btnCart.Location = new System.Drawing.Point(392, 3);
+            this.btnCart.Name = "btnCart";
+            this.btnCart.Size = new System.Drawing.Size(75, 25);
+            this.btnCart.TabIndex = 3;
+            this.btnCart.Text = "Your Cart";
+            this.btnCart.UseVisualStyleBackColor = true;
+            this.btnCart.Click += new System.EventHandler(this.btnCart_Click);
             // 
             // Homepage
             // 
@@ -304,18 +345,18 @@
             this.Size = new System.Drawing.Size(816, 589);
             this.Load += new System.EventHandler(this.load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel4.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
+            this.scrollPanel.ResumeLayout(false);
+            this.scrollPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameImageBox)).EndInit();
             this.flowLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -331,16 +372,17 @@
         private System.Windows.Forms.TextBox searchbox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.ListBox listBoxGames;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.FlowLayoutPanel scrollPanel;
         private System.Windows.Forms.PictureBox gameImageBox;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblPublisher;
+        private System.Windows.Forms.RichTextBox rchDescription;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label lblPublisher;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Button btnCart;
     }
 }

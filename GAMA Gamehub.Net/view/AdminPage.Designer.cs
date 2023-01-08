@@ -46,7 +46,7 @@
             // 
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DimGray;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -91,9 +91,13 @@
             // button1
             // 
             this.button1.AutoSize = true;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Ivory;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(403, 56);
+            this.button1.Size = new System.Drawing.Size(391, 56);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add User";
             this.button1.UseVisualStyleBackColor = true;
@@ -102,20 +106,28 @@
             // button2
             // 
             this.button2.AutoSize = true;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Ivory;
             this.button2.Location = new System.Drawing.Point(3, 65);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(403, 50);
+            this.button2.Size = new System.Drawing.Size(391, 50);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Add Product";
+            this.button2.Text = "Add Game";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.AutoSize = true;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Ivory;
             this.button3.Location = new System.Drawing.Point(3, 121);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(403, 50);
+            this.button3.Size = new System.Drawing.Size(391, 50);
             this.button3.TabIndex = 2;
             this.button3.Text = "Edit User";
             this.button3.UseVisualStyleBackColor = true;
@@ -124,9 +136,13 @@
             // button4
             // 
             this.button4.AutoSize = true;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Ivory;
             this.button4.Location = new System.Drawing.Point(3, 177);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(403, 56);
+            this.button4.Size = new System.Drawing.Size(391, 56);
             this.button4.TabIndex = 3;
             this.button4.Text = "Edit Product";
             this.button4.UseVisualStyleBackColor = true;
@@ -135,9 +151,13 @@
             // button5
             // 
             this.button5.AutoSize = true;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Ivory;
             this.button5.Location = new System.Drawing.Point(3, 239);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(403, 43);
+            this.button5.Size = new System.Drawing.Size(391, 43);
             this.button5.TabIndex = 4;
             this.button5.Text = "Delete User";
             this.button5.UseVisualStyleBackColor = true;
@@ -146,9 +166,13 @@
             // button6
             // 
             this.button6.AutoSize = true;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.Ivory;
             this.button6.Location = new System.Drawing.Point(3, 288);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(403, 52);
+            this.button6.Size = new System.Drawing.Size(391, 52);
             this.button6.TabIndex = 5;
             this.button6.Text = "Delete Product";
             this.button6.UseVisualStyleBackColor = true;
@@ -157,9 +181,13 @@
             // btnExit
             // 
             this.btnExit.AutoSize = true;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Yellow;
             this.btnExit.Location = new System.Drawing.Point(3, 346);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(407, 56);
+            this.btnExit.Size = new System.Drawing.Size(391, 56);
             this.btnExit.TabIndex = 6;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -169,6 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AdminPage";
             this.Size = new System.Drawing.Size(825, 542);

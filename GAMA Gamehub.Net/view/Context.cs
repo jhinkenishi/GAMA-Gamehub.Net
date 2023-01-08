@@ -11,6 +11,9 @@ namespace GAMA_Gamehub
         private Control view;
         private LoginStatus status = LoginStatus.LOGOFF;
         private string logUsername;
+        private int currentSelectedGame;
+
+        public int CurrentSelectedGame { get => currentSelectedGame; set => currentSelectedGame = value; }
 
         public Context()
         {

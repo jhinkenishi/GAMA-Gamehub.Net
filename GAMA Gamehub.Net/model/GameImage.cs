@@ -10,6 +10,11 @@ namespace GAMA_Gamehub.Net.model
     {
         private int id, gameId, imageId;
 
+        public GameImage( int gameId, int imageId)
+        {
+            this.GameId = gameId;
+            this.ImageId = imageId;
+        }
         public GameImage(int id, int gameId, int imageId)
         {
             this.Id = id;

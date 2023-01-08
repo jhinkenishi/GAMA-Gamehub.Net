@@ -32,6 +32,8 @@ namespace GAMA_Gamehub.view.panel
         private List<GamePublisher> gamePublishers = new List<GamePublisher>();
         private List<GGImage> images = new List<GGImage>();
         private List<Publisher> publishers = new List<Publisher>();
+        private List<GameDescription> gameDescriptions = new List<GameDescription>();
+        private List<Description> descriptions = new List<Description>();
 
         private int selectedIndex  = 0;
 
@@ -42,8 +44,13 @@ namespace GAMA_Gamehub.view.panel
             Dock = DockStyle.Fill;
             this.context = context;
             InitializeComponent();
-    
 
+
+
+        }
+        public void AddToCart(string username, int gameId)
+        {
+            database.Query(string.Format("INSERT INTO game_cart (username, game_id) VALUES ('{0}', '{1}')", username, gameId));
 
         }
         
@@ -142,9 +149,30 @@ namespace GAMA_Gamehub.view.panel
 
             }
 
+            reader = database.QueryFirstRow("SELECT * FROM description");
+            descriptions.Clear();
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                string message = reader.GetString(1);
+                descriptions.Add(new Description(id, message));
+            }
+
+            reader = database.QueryFirstRow("SELECT * FROM game_description");
+            gameDescriptions.Clear();
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                int gameId = reader.GetInt32(1);
+                int descriptionId = reader.GetInt32(2);
+                gameDescriptions.Add(new GameDescription(id, gameId, descriptionId));
+            }
+
+
+
             foreach (string item in gameNames)
             {
-                listBoxGames.Items.Add(item);
+                listBoxGames.Items.Add(item.ToUpper());
             }
             //MessageBox.Show("Finish loading");
             reader.Close();
@@ -169,7 +197,7 @@ namespace GAMA_Gamehub.view.panel
             //}
             listBoxGames.Items.Clear();
             
-            MySqlDataReader reader = database.QueryFirstRow(String.Format("SELECT * FROM game where game_name LIKE '{0}%'", search));
+            MySqlDataReader reader = database.QueryFirstRow(String.Format("SELECT * FROM game where game_name LIKE '{0}%' LIMIT 75", search));
             games.Clear();
             while (reader.Read())
             {
@@ -194,6 +222,8 @@ namespace GAMA_Gamehub.view.panel
             lblTitle.Text = games[selectedIndex].Name;
             lblPrice.Text = "Price: $" + games[selectedIndex].Price;
             int selectedGameId = games[selectedIndex].Id;
+            context.CurrentSelectedGame = selectedGameId;
+
             //
             string publisher = "";
             foreach(GamePublisher gp in gamePublishers)
@@ -247,6 +277,28 @@ namespace GAMA_Gamehub.view.panel
 
             gameImageBox.Image = image;
 
+            //
+            string gameDescription = "No Description";
+            foreach (GameDescription gd in gameDescriptions)
+            {
+                if (gd.GameId.Equals(selectedGameId))
+                {
+                    int descriptionId = gd.DescriptionId;
+
+                    foreach (Description desc in descriptions)
+                    {
+                        if (desc.Id.Equals(descriptionId))
+                        {
+                            gameDescription = desc.Message;
+       
+                        }
+
+                    }
+                }
+            }
+            rchDescription.Text = gameDescription;
+
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -269,8 +321,8 @@ namespace GAMA_Gamehub.view.panel
             if (context.GetStatus() == Context.LoginStatus.LOGON)
             {
                 context.Controls.Clear();
+                AddToCart(context.GetLogonUsername(), context.CurrentSelectedGame);
                 context.Controls.Add(new AddToCartPage(context));
-
             }
             else
             {
@@ -280,6 +332,22 @@ namespace GAMA_Gamehub.view.panel
             
         }
 
-  
+        private void OnScroll(object sender, ScrollEventArgs e)
+        {
+        }
+
+        private void btnCart_Click(object sender, EventArgs e)
+        {
+            if(context.GetStatus() == Context.LoginStatus.LOGON)
+            {
+                context.Controls.Clear();
+                context.Controls.Add(new AddToCartPage(context));
+            }
+            else
+            {
+                context.Controls.Clear();
+                context.Controls.Add(new LoginPage(context));
+            }
+        }
     }
 }

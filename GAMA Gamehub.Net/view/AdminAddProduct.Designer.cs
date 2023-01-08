@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -69,6 +69,17 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(16);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(217, 553);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(19, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(179, 37);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Add Game";
             // 
             // label1
             // 
@@ -161,17 +172,6 @@
             this.numericUpDown3.Size = new System.Drawing.Size(179, 20);
             this.numericUpDown3.TabIndex = 9;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(19, 16);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(179, 37);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Add Game";
-            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -186,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.BackColor = System.Drawing.Color.Silver;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "AdminAddProduct";
             this.Size = new System.Drawing.Size(838, 530);

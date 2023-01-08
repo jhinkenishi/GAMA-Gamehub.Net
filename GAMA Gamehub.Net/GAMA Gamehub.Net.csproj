@@ -148,7 +148,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="model\Description.cs" />
     <Compile Include="model\Game.cs" />
+    <Compile Include="model\GameCart.cs" />
+    <Compile Include="model\GameDescription.cs" />
     <Compile Include="model\GameImage.cs" />
     <Compile Include="model\GamePublisher.cs" />
     <Compile Include="model\Genre.cs" />

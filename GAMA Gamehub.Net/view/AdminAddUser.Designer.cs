@@ -38,11 +38,11 @@
             this.txtBoxUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBoxPassword = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtBoxConPassword = new System.Windows.Forms.TextBox();
             this.ckboxLoginStatus = new System.Windows.Forms.CheckBox();
             this.cbBoxUserType = new System.Windows.Forms.ComboBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtBoxConPassword = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,6 +155,23 @@
             this.txtBoxPassword.TabIndex = 68;
             this.txtBoxPassword.TextChanged += new System.EventHandler(this.OnPasswordChange);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(19, 209);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.TabIndex = 74;
+            this.label5.Text = "Confirm Password";
+            // 
+            // txtBoxConPassword
+            // 
+            this.txtBoxConPassword.Location = new System.Drawing.Point(19, 225);
+            this.txtBoxConPassword.Name = "txtBoxConPassword";
+            this.txtBoxConPassword.PasswordChar = '*';
+            this.txtBoxConPassword.Size = new System.Drawing.Size(162, 20);
+            this.txtBoxConPassword.TabIndex = 73;
+            // 
             // ckboxLoginStatus
             // 
             this.ckboxLoginStatus.AutoSize = true;
@@ -186,28 +203,11 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // txtBoxConPassword
-            // 
-            this.txtBoxConPassword.Location = new System.Drawing.Point(19, 225);
-            this.txtBoxConPassword.Name = "txtBoxConPassword";
-            this.txtBoxConPassword.PasswordChar = '*';
-            this.txtBoxConPassword.Size = new System.Drawing.Size(162, 20);
-            this.txtBoxConPassword.TabIndex = 73;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 209);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
-            this.label5.TabIndex = 74;
-            this.label5.Text = "Confirm Password";
-            // 
             // AdminAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BackColor = System.Drawing.Color.Silver;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "AdminAddUser";
             this.Size = new System.Drawing.Size(781, 556);

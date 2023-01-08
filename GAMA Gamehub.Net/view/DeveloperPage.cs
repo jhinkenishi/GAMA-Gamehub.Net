@@ -24,6 +24,8 @@ namespace GAMA_Gamehub.Net.view.controls
         private List<Game> games = new List<Game>();
         private List<GGImage> images = new List<GGImage>();
         private List<Genre> genres = new List<Genre>();
+        private List<Description> descriptions = new List<Description>();
+
         private string fileName;
         private const string ROOT_FOLDER = "resource";
         private const string SUB_FOLDER = "images";
@@ -46,6 +48,17 @@ namespace GAMA_Gamehub.Net.view.controls
             MessageBox.Show(image.ImagePath);
             database.Query(String.Format("INSERT INTO image (image_path) VALUES ('{0}')", image.ImagePath));
 
+        }
+   
+
+        public void AddDescription(Description description)
+        {
+            database.Query(string.Format("INSERT INTO description (message) VALUES ('{0}')", description.Message));
+        }
+
+        public void AddPublisher(Publisher publisher)
+        {
+            database.Query(string.Format("INSERT INTO publisher (publisher_name) VALUES ('{0}')", publisher.PublisherName));
         }
     
 
@@ -90,6 +103,7 @@ namespace GAMA_Gamehub.Net.view.controls
             string description = txtboxDesc.Text;
             double price = (double)inptPrice.Value;
             int genreId = genres[cbGenres.SelectedIndex].Id;
+
             if (name == "" || publisher == "" || description == "" || price == 0 || context.GetStatus() == Context.LoginStatus.LOGOFF)
             {
                if(name == "")
@@ -115,9 +129,10 @@ namespace GAMA_Gamehub.Net.view.controls
                 database.Query(String.Format("INSERT INTO game (genre_id, game_name, game_rating, game_price, game_sold) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')", genreId, name, 1, price, 0));
 
                 AddImage(new GGImage(ROOT_FOLDER +  "\\\\" + SUB_FOLDER+ "\\\\" + fileName));
+                AddDescription(new Description(description));
                 LoadRefresh();
-                SetUpGameImage(games.Last().Id, images.Last().Id);
-
+                SetUpGameImage( new GameImage(games.Last().Id, images.Last().Id));
+                SetUpGameDescription(new GameDescription(games.Last().Id, descriptions.Last().Id));
 
 
                 //database.Query(String.Format("INSERT INTO product (name, publisher, price, description, imagePath) VALUES ('{0}', '{1}','{2}', '{3}', '{4}')", name, publisher, price, description, relativeImagePath + fileName));
@@ -133,11 +148,16 @@ namespace GAMA_Gamehub.Net.view.controls
      
 
         }
-        public void SetUpGameImage(int gameId, int imageId)
+        public void SetUpGameImage(GameImage gameImage)
         {
-            database.Query(string.Format(string.Format("INSERT INTO game_image (game_id, image_id) VALUES ('{0}', '{1}')", gameId, imageId)));
+            database.Query(string.Format("INSERT INTO game_image (game_id, image_id) VALUES ('{0}', '{1}')", gameImage.GameId, gameImage.ImageId));
         }
-    
+        public void SetUpGameDescription(GameDescription gameDescription)
+        {
+            database.Query(string.Format("INSERT INTO game_description (game_id, description_id) VALUES ('{0}', '{1}')", gameDescription.GameId, gameDescription.DescriptionId));
+
+        }
+
 
         private void Loader(object sender, EventArgs e)
         {
@@ -146,15 +166,16 @@ namespace GAMA_Gamehub.Net.view.controls
 
         public void LoadRefresh()
         {
-            MySqlDataReader reader = database.QueryFirstRow(String.Format("SELECT name, publisher FROM product where publisher='{0}'", context.GetLogonUsername()));
-            lstBoxGamesPublished.Items.Clear();
-            while (reader.Read())
-            {
-                lstBoxGamesPublished.Items.Add(reader[0].ToString());
+            //MySqlDataReader reader = database.QueryFirstRow(String.Format("SELECT name, publisher FROM product where publisher='{0}'", context.GetLogonUsername()));
+            //lstBoxGamesPublished.Items.Clear();
+            //while (reader.Read())
+            //{
+            //    lstBoxGamesPublished.Items.Add(reader[0].ToString());
 
-            }
+            //}
+
             genres.Clear();
-            reader = database.QueryFirstRow("SELECT * FROM genre");
+            MySqlDataReader reader = database.QueryFirstRow("SELECT * FROM genre");
             while (reader.Read())
             {
                 cbGenres.Items.Add(reader.GetString(1));
@@ -174,6 +195,16 @@ namespace GAMA_Gamehub.Net.view.controls
                 int sold = reader.GetInt32(5);
                 games.Add(new Game(id, genreId, name, rating, price, sold));
             }
+
+            reader = database.QueryFirstRow("SELECT * FROM description");
+            descriptions.Clear();
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(0);
+                string message = reader.GetString(1);
+                descriptions.Add(new Description(id, message));
+            }
+
             reader = database.QueryFirstRow("SELECT * FROM image");
             images.Clear();
             while (reader.Read())
@@ -182,6 +213,8 @@ namespace GAMA_Gamehub.Net.view.controls
                 string imagePath = reader.GetString(1);
                 images.Add(new GGImage(id, imagePath));
             }
+
+
 
             reader.Close();
         }

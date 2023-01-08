@@ -48,7 +48,7 @@ namespace GAMA_Gamehub.view.controls
         {
             string username = txtBoxUsername.Text;
             string password = txtBoxPassword.Text;
-            MySqlDataReader reader = database.QueryFirstRow("SELECT username, password FROM users where username='"  + username + "'");
+            MySqlDataReader reader = database.QueryFirstRow("SELECT username, password FROM game_users where username='" + username + "'");
             bool isSuccessfulLogin = false;
             while (reader.Read())
             {

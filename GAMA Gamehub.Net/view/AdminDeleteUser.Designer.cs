@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Khaki;
+            this.BackColor = System.Drawing.Color.Silver;
             this.Name = "AdminDeleteUser";
             this.Size = new System.Drawing.Size(734, 526);
             this.ResumeLayout(false);

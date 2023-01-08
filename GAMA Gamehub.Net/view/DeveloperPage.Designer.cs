@@ -43,6 +43,8 @@
             this.cbGenres = new System.Windows.Forms.ComboBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.inptPrice = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtBoxPublisher = new System.Windows.Forms.TextBox();
             this.btnPublish = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,7 +61,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSize = true;
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -89,6 +91,7 @@
             // 
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Silver;
             this.flowLayoutPanel1.Controls.Add(this.gamePic);
             this.flowLayoutPanel1.Controls.Add(this.btnUploadFile);
             this.flowLayoutPanel1.Controls.Add(this.lblTitle);
@@ -99,6 +102,8 @@
             this.flowLayoutPanel1.Controls.Add(this.cbGenres);
             this.flowLayoutPanel1.Controls.Add(this.lblPrice);
             this.flowLayoutPanel1.Controls.Add(this.inptPrice);
+            this.flowLayoutPanel1.Controls.Add(this.label3);
+            this.flowLayoutPanel1.Controls.Add(this.txtBoxPublisher);
             this.flowLayoutPanel1.Controls.Add(this.btnPublish);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -124,6 +129,7 @@
             this.btnUploadFile.AutoSize = true;
             this.btnUploadFile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnUploadFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUploadFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUploadFile.Location = new System.Drawing.Point(3, 142);
             this.btnUploadFile.Name = "btnUploadFile";
             this.btnUploadFile.Size = new System.Drawing.Size(374, 23);
@@ -208,9 +214,26 @@
             this.inptPrice.Size = new System.Drawing.Size(374, 20);
             this.inptPrice.TabIndex = 8;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 325);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Your Publisher";
+            // 
+            // txtBoxPublisher
+            // 
+            this.txtBoxPublisher.Location = new System.Drawing.Point(3, 341);
+            this.txtBoxPublisher.Name = "txtBoxPublisher";
+            this.txtBoxPublisher.Size = new System.Drawing.Size(374, 20);
+            this.txtBoxPublisher.TabIndex = 12;
+            // 
             // btnPublish
             // 
-            this.btnPublish.Location = new System.Drawing.Point(3, 328);
+            this.btnPublish.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPublish.Location = new System.Drawing.Point(3, 367);
             this.btnPublish.Name = "btnPublish";
             this.btnPublish.Size = new System.Drawing.Size(374, 23);
             this.btnPublish.TabIndex = 5;
@@ -243,7 +266,7 @@
             // 
             // lstBoxGamesPublished
             // 
-            this.lstBoxGamesPublished.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lstBoxGamesPublished.BackColor = System.Drawing.Color.White;
             this.lstBoxGamesPublished.FormattingEnabled = true;
             this.lstBoxGamesPublished.Location = new System.Drawing.Point(3, 23);
             this.lstBoxGamesPublished.Name = "lstBoxGamesPublished";
@@ -308,5 +331,7 @@
         private System.Windows.Forms.ListBox lstBoxGamesPublished;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbGenres;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtBoxPublisher;
     }
 }
