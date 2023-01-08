@@ -64,10 +64,11 @@
             // managePanel
             // 
             this.managePanel.AutoSize = true;
-            this.managePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.managePanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.managePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.managePanel.Location = new System.Drawing.Point(415, 3);
             this.managePanel.Name = "managePanel";
-            this.managePanel.Size = new System.Drawing.Size(407, 536);
+            this.managePanel.Size = new System.Drawing.Size(407, 0);
             this.managePanel.TabIndex = 0;
             // 
             // flowLayoutPanel1

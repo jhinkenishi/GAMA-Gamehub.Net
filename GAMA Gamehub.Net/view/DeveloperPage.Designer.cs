@@ -39,6 +39,8 @@
             this.txtBoxTitle = new System.Windows.Forms.TextBox();
             this.lblDesc = new System.Windows.Forms.Label();
             this.txtboxDesc = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbGenres = new System.Windows.Forms.ComboBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.inptPrice = new System.Windows.Forms.NumericUpDown();
             this.btnPublish = new System.Windows.Forms.Button();
@@ -93,6 +95,8 @@
             this.flowLayoutPanel1.Controls.Add(this.txtBoxTitle);
             this.flowLayoutPanel1.Controls.Add(this.lblDesc);
             this.flowLayoutPanel1.Controls.Add(this.txtboxDesc);
+            this.flowLayoutPanel1.Controls.Add(this.label2);
+            this.flowLayoutPanel1.Controls.Add(this.cbGenres);
             this.flowLayoutPanel1.Controls.Add(this.lblPrice);
             this.flowLayoutPanel1.Controls.Add(this.inptPrice);
             this.flowLayoutPanel1.Controls.Add(this.btnPublish);
@@ -164,10 +168,27 @@
             this.txtboxDesc.Size = new System.Drawing.Size(374, 20);
             this.txtboxDesc.TabIndex = 4;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 246);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Genre";
+            // 
+            // cbGenres
+            // 
+            this.cbGenres.FormattingEnabled = true;
+            this.cbGenres.Location = new System.Drawing.Point(3, 262);
+            this.cbGenres.Name = "cbGenres";
+            this.cbGenres.Size = new System.Drawing.Size(374, 21);
+            this.cbGenres.TabIndex = 9;
+            // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(3, 246);
+            this.lblPrice.Location = new System.Drawing.Point(3, 286);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(50, 13);
             this.lblPrice.TabIndex = 7;
@@ -177,7 +198,7 @@
             // 
             this.inptPrice.DecimalPlaces = 2;
             this.inptPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inptPrice.Location = new System.Drawing.Point(3, 262);
+            this.inptPrice.Location = new System.Drawing.Point(3, 302);
             this.inptPrice.Maximum = new decimal(new int[] {
             1215752191,
             23,
@@ -189,7 +210,7 @@
             // 
             // btnPublish
             // 
-            this.btnPublish.Location = new System.Drawing.Point(3, 288);
+            this.btnPublish.Location = new System.Drawing.Point(3, 328);
             this.btnPublish.Name = "btnPublish";
             this.btnPublish.Size = new System.Drawing.Size(374, 23);
             this.btnPublish.TabIndex = 5;
@@ -285,5 +306,7 @@
         private System.Windows.Forms.ImageList gameImagesLIst;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox lstBoxGamesPublished;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbGenres;
     }
 }

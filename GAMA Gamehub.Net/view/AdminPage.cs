@@ -31,14 +31,14 @@ namespace GAMA_Gamehub.Net.view.controls
         private void button1_Click(object sender, EventArgs e)
         {
             managePanel.Controls.Clear();
-            managePanel.Controls.Add(new AdminAddProduct());
+            managePanel.Controls.Add(new AdminAddUser());
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             managePanel.Controls.Clear();
-            managePanel.Controls.Add(new AdminAddUser());
+            managePanel.Controls.Add(new AdminAddProduct());
         }
 
         private void button3_Click(object sender, EventArgs e)

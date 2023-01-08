@@ -42,9 +42,9 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.gameImageBox = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblDescription = new System.Windows.Forms.Label();
             this.lblPublisher = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
+            this.lblDescription = new System.Windows.Forms.Label();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -91,6 +91,7 @@
             // 
             // btnAccount
             // 
+            this.btnAccount.AutoSize = true;
             this.btnAccount.Location = new System.Drawing.Point(411, 3);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(75, 23);
@@ -101,6 +102,7 @@
             // 
             // btnDev
             // 
+            this.btnDev.AutoSize = true;
             this.btnDev.Location = new System.Drawing.Point(330, 3);
             this.btnDev.Name = "btnDev";
             this.btnDev.Size = new System.Drawing.Size(75, 23);
@@ -111,6 +113,7 @@
             // 
             // btnAdmin
             // 
+            this.btnAdmin.AutoSize = true;
             this.btnAdmin.Location = new System.Drawing.Point(249, 3);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(75, 23);
@@ -214,21 +217,12 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblTitle.Location = new System.Drawing.Point(3, 165);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(82, 37);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Title";
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(3, 248);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(121, 26);
-            this.lblDescription.TabIndex = 2;
-            this.lblDescription.Text = "Description";
             // 
             // lblPublisher
             // 
@@ -249,6 +243,16 @@
             this.lblPrice.Size = new System.Drawing.Size(67, 26);
             this.lblPrice.TabIndex = 5;
             this.lblPrice.Text = "Price";
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescription.Location = new System.Drawing.Point(3, 248);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(121, 26);
+            this.lblDescription.TabIndex = 2;
+            this.lblDescription.Text = "Description";
             // 
             // flowLayoutPanel5
             // 
@@ -301,6 +305,7 @@
             this.Load += new System.EventHandler(this.load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel4.ResumeLayout(false);

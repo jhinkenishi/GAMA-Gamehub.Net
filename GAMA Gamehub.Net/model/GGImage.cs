@@ -12,6 +12,10 @@ namespace GAMA_Gamehub.Net.model
         private int id;
         private string imagePath;
 
+        public GGImage(string image_path)
+        {
+            this.imagePath = image_path;
+        }
         public GGImage(int id, string image_path)
         {
             this.id = id;

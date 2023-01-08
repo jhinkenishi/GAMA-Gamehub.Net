@@ -23,7 +23,6 @@ namespace GAMA_Gamehub.Net.view.database
             {
                 connection.Open();
                 MySqlDataReader reader = command.ExecuteReader();
-                MessageBox.Show("Successful");
                 connection.Close();
 
             }

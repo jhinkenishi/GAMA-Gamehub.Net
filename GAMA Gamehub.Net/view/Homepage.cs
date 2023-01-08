@@ -42,10 +42,7 @@ namespace GAMA_Gamehub.view.panel
             Dock = DockStyle.Fill;
             this.context = context;
             InitializeComponent();
-            if (context.GetStatus() == Context.LoginStatus.LOGON)
-            {
-                btnAccount.Text = "View your Account";
-            }
+    
 
 
         }
@@ -76,17 +73,36 @@ namespace GAMA_Gamehub.view.panel
 
         private void button2_Click(object sender, EventArgs e)
         {
-            context.Controls.Clear();
-            context.Controls.Add(new DeveloperPage(context));
+            if(context.GetStatus() == Context.LoginStatus.LOGOFF)
+            {
+                context.Controls.Clear();
+                context.Controls.Add(new LoginPage(context));
+            }
+            else
+            {
+                context.Controls.Clear();
+                context.Controls.Add(new DeveloperPage(context));
+            }
+
         }
 
         private void load(object sender, EventArgs e)
         {
+            if (context.GetStatus() == Context.LoginStatus.LOGON)
+            {
+                btnAccount.Text = "View your Account";
+            }
 
-            MySqlDataReader reader = database.QueryFirstRow("SELECT *  FROM game");
+            MySqlDataReader reader = database.QueryFirstRow("SELECT *  FROM game LIMIT 100");
             while (reader.Read())
             {
-                games.Add(new Game(reader.GetInt32(0), reader.GetInt16(1), reader.GetString(2), reader.GetDouble(3), reader.GetDouble(4), reader.GetInt16(5)));
+                int id = reader.GetInt32(0);
+                int genreId = reader.GetInt32(1);
+                string name = reader.GetString(2);
+                double rating = reader.GetDouble(3);
+                double price = reader.GetDouble(4);
+                int sold = reader.GetInt32(5);
+                games.Add(new Game(id, genreId, name, rating, price, sold));
                 gameNames.Add(reader[2].ToString());
             }
 
@@ -94,6 +110,7 @@ namespace GAMA_Gamehub.view.panel
 
 
             reader = database.QueryFirstRow("SELECT * FROM publisher");
+            publishers.Clear();
             while (reader.Read())
             {
                 publishers.Add(new Publisher(int.Parse(reader[0].ToString()), reader[1].ToString()));
@@ -102,6 +119,7 @@ namespace GAMA_Gamehub.view.panel
 
             reader = database.QueryFirstRow("SELECT * FROM image");
 
+            images.Clear();
             while (reader.Read())
             {
                 images.Add(new GGImage(int.Parse(reader[0].ToString()), reader[1].ToString()));
@@ -109,12 +127,15 @@ namespace GAMA_Gamehub.view.panel
             //reader.Close();
 
             reader = database.QueryFirstRow("SELECT * FROM game_image");
+            gameImages.Clear();
             while (reader.Read())
             {
                 gameImages.Add(new GameImage(int.Parse(reader[0].ToString()), int.Parse(reader[1].ToString()), int.Parse(reader[2].ToString())));
             }
 
             reader = database.QueryFirstRow("SELECT * FROM game_publisher");
+
+            gamePublishers.Clear();
             while (reader.Read())
             {
                 gamePublishers.Add(new GamePublisher(int.Parse(reader[0].ToString()), int.Parse(reader[1].ToString()), int.Parse(reader[2].ToString())));
@@ -125,7 +146,7 @@ namespace GAMA_Gamehub.view.panel
             {
                 listBoxGames.Items.Add(item);
             }
-            MessageBox.Show("Finish loading");
+            //MessageBox.Show("Finish loading");
             reader.Close();
             
 
@@ -147,8 +168,9 @@ namespace GAMA_Gamehub.view.panel
             //    }
             //}
             listBoxGames.Items.Clear();
-            games.Clear();
+            
             MySqlDataReader reader = database.QueryFirstRow(String.Format("SELECT * FROM game where game_name LIKE '{0}%'", search));
+            games.Clear();
             while (reader.Read())
             {
                 int id = reader.GetInt32(0);
@@ -160,6 +182,7 @@ namespace GAMA_Gamehub.view.panel
                 games.Add(new Game(id, genreId, name, rating, price, sold));
                 listBoxGames.Items.Add(reader.GetString(2));
             }
+   
             reader.Close();
 
 
@@ -171,64 +194,58 @@ namespace GAMA_Gamehub.view.panel
             lblTitle.Text = games[selectedIndex].Name;
             lblPrice.Text = "Price: $" + games[selectedIndex].Price;
             int selectedGameId = games[selectedIndex].Id;
-
             //
+            string publisher = "";
             foreach(GamePublisher gp in gamePublishers)
             {
-                if (gp.GameId.Equals(selectedGameId))
+                if (gp.GameId.Equals(selectedGameId) )
                 {
                     int publisherId = gp.PublisherId;
                     foreach(Publisher pb in publishers)
                     {
                         if (pb.Id.Equals(publisherId))
                         {
-                            lblPublisher.Text = "Published by: " + pb.PublisherName;
+                            publisher = pb.PublisherName;
+                            
                             
                         }
                     }
                 }
             }
+            lblPublisher.Text = "Published by: " + publisher;
             //
+            System.Drawing.Image image = null;
             foreach (GameImage gi in gameImages)
             {
                 if (gi.GameId.Equals(selectedGameId))
                 {
-                    int gameId = gi.GameId;
+                    int gimageId = gi.ImageId;
 
                     foreach (GGImage gimage in images)
                     {
-                        if (gimage.Id.Equals(gameId))
+                        if (gimage.Id.Equals(gimageId))
                         {
 
                             try
                             {
                                 string baseDirectory = Environment.CurrentDirectory;
-          
                                 string imagePath = Path.Combine(baseDirectory, gimage.ImagePath);
-                                if (gimage.ImagePath.Equals(""))
-                                {
-                                    MessageBox.Show("Hello Worldd");
-                                    gameImageBox.Image = null;
-                                }
-                                else
-                                {
-                                    System.Drawing.Image image = System.Drawing.Image.FromFile(imagePath);
-                                    gameImageBox.Image = image;
-                                }
+                                image = System.Drawing.Image.FromFile(imagePath);
+                                
+
                             }
-                            catch(Exception ex)
+                            catch (Exception ex)
                             {
                                 MessageBox.Show(ex.Message);
+                                
                             }
                         }
-                       
-                        
 
                     }
                 }
             }
 
-
+            gameImageBox.Image = image;
 
         }
 
