@@ -62,7 +62,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 321F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 476F));
@@ -82,6 +82,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.flowLayoutPanel1.Controls.Add(this.btnCart);
             this.flowLayoutPanel1.Controls.Add(this.btnAccount);
             this.flowLayoutPanel1.Controls.Add(this.btnDev);
@@ -134,7 +135,7 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Black;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(33)))));
             this.flowLayoutPanel2.Controls.Add(this.label1);
             this.flowLayoutPanel2.Controls.Add(this.searchbox);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -163,7 +164,7 @@
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.BackColor = System.Drawing.Color.Black;
+            this.flowLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(33)))));
             this.flowLayoutPanel4.Controls.Add(this.label4);
             this.flowLayoutPanel4.Controls.Add(this.listBoxGames);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -185,9 +186,11 @@
             // 
             // listBoxGames
             // 
+            this.listBoxGames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(26)))), ((int)(((byte)(33)))));
             this.listBoxGames.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel4.SetFlowBreak(this.listBoxGames, true);
             this.listBoxGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxGames.ForeColor = System.Drawing.Color.LightGray;
             this.listBoxGames.FormattingEnabled = true;
             this.listBoxGames.ItemHeight = 20;
             this.listBoxGames.Location = new System.Drawing.Point(3, 16);
@@ -201,7 +204,7 @@
             this.scrollPanel.AutoScroll = true;
             this.scrollPanel.AutoSize = true;
             this.scrollPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.scrollPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.scrollPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.scrollPanel.Controls.Add(this.gameImageBox);
             this.scrollPanel.Controls.Add(this.lblTitle);
             this.scrollPanel.Controls.Add(this.lblPublisher);
@@ -217,15 +220,17 @@
             // 
             // gameImageBox
             // 
-            this.gameImageBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.gameImageBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.gameImageBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gameImageBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gameImageBox.ErrorImage = global::GAMA_Gamehub.Net.Properties.Resources.No_Image_Available;
             this.gameImageBox.Location = new System.Drawing.Point(3, 3);
             this.gameImageBox.Name = "gameImageBox";
             this.gameImageBox.Size = new System.Drawing.Size(460, 182);
             this.gameImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.gameImageBox.TabIndex = 0;
             this.gameImageBox.TabStop = false;
+            this.gameImageBox.WaitOnLoad = true;
             // 
             // lblTitle
             // 

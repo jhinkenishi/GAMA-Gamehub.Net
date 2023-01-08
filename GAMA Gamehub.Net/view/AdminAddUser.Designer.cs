@@ -74,6 +74,7 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(19, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 37);
@@ -84,6 +85,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblName.Location = new System.Drawing.Point(19, 53);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(162, 13);
@@ -102,6 +104,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(19, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(162, 13);
@@ -121,6 +124,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(19, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(162, 13);
@@ -139,6 +143,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label4.Location = new System.Drawing.Point(19, 170);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 13);
@@ -158,6 +163,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label5.Location = new System.Drawing.Point(19, 209);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
@@ -176,6 +182,7 @@
             // 
             this.ckboxLoginStatus.AutoSize = true;
             this.ckboxLoginStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckboxLoginStatus.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ckboxLoginStatus.Location = new System.Drawing.Point(19, 251);
             this.ckboxLoginStatus.Name = "ckboxLoginStatus";
             this.ckboxLoginStatus.Size = new System.Drawing.Size(162, 17);
@@ -186,6 +193,7 @@
             // cbBoxUserType
             // 
             this.cbBoxUserType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbBoxUserType.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbBoxUserType.FormattingEnabled = true;
             this.cbBoxUserType.Location = new System.Drawing.Point(19, 274);
             this.cbBoxUserType.Name = "cbBoxUserType";
@@ -195,6 +203,8 @@
             // btnSubmit
             // 
             this.btnSubmit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSubmit.Location = new System.Drawing.Point(19, 301);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(162, 23);
@@ -207,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "AdminAddUser";
             this.Size = new System.Drawing.Size(781, 556);

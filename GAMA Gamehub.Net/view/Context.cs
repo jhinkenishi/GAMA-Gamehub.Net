@@ -22,6 +22,7 @@ namespace GAMA_Gamehub
             InitializeComponent();
         }
 
+        
         public void SetStatus(LoginStatus status)
         {
             this.status = status;

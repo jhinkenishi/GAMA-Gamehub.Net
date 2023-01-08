@@ -74,8 +74,17 @@ namespace GAMA_Gamehub.view.panel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            context.Controls.Clear();
-            context.Controls.Add(new AdminPage(context));
+            if (context.GetStatus() == Context.LoginStatus.LOGON)
+            {
+                context.Controls.Clear();
+                context.Controls.Add(new AdminPage(context));
+            }
+            else
+            {
+                context.Controls.Clear();
+                context.Controls.Add(new LoginPage(context));
+            }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -139,6 +148,7 @@ namespace GAMA_Gamehub.view.panel
             {
                 gameImages.Add(new GameImage(int.Parse(reader[0].ToString()), int.Parse(reader[1].ToString()), int.Parse(reader[2].ToString())));
             }
+            reader.Close();
 
             reader = database.QueryFirstRow("SELECT * FROM game_publisher");
 
@@ -148,6 +158,7 @@ namespace GAMA_Gamehub.view.panel
                 gamePublishers.Add(new GamePublisher(int.Parse(reader[0].ToString()), int.Parse(reader[1].ToString()), int.Parse(reader[2].ToString())));
 
             }
+            reader.Close();
 
             reader = database.QueryFirstRow("SELECT * FROM description");
             descriptions.Clear();
@@ -157,6 +168,7 @@ namespace GAMA_Gamehub.view.panel
                 string message = reader.GetString(1);
                 descriptions.Add(new Description(id, message));
             }
+            reader.Close();
 
             reader = database.QueryFirstRow("SELECT * FROM game_description");
             gameDescriptions.Clear();
@@ -168,14 +180,17 @@ namespace GAMA_Gamehub.view.panel
                 gameDescriptions.Add(new GameDescription(id, gameId, descriptionId));
             }
 
-
+            reader.Close();
 
             foreach (string item in gameNames)
             {
                 listBoxGames.Items.Add(item.ToUpper());
             }
+            listBoxGames.SelectedIndex = 0;
+
+
             //MessageBox.Show("Finish loading");
-            reader.Close();
+           
             
 
         }
@@ -244,7 +259,7 @@ namespace GAMA_Gamehub.view.panel
             }
             lblPublisher.Text = "Published by: " + publisher;
             //
-            System.Drawing.Image image = null;
+            System.Drawing.Image image = gameImageBox.ErrorImage;
             foreach (GameImage gi in gameImages)
             {
                 if (gi.GameId.Equals(selectedGameId))

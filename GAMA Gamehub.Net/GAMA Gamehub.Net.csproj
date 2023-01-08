@@ -271,6 +271,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="view\AddToCartPage.resx">
       <DependentUpon>AddToCartPage.cs</DependentUpon>
@@ -362,6 +363,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="resource\images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resource\images\No_Image_Available.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
