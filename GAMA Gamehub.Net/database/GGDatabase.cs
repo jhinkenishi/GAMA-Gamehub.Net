@@ -22,7 +22,7 @@ namespace GAMA_Gamehub.Net.view.database
             try
             {
                 connection.Open();
-                MySqlDataReader reader = command.ExecuteReader();
+                reader = command.ExecuteReader();
                 connection.Close();
 
             }
@@ -32,8 +32,8 @@ namespace GAMA_Gamehub.Net.view.database
             }
         }
         public MySqlDataReader QueryFirstRow(string sql) {
-            MySqlConnection connection = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gama_gamehub");
-            MySqlCommand command = new MySqlCommand(sql, connection);
+            connection = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gama_gamehub");
+            command = new MySqlCommand(sql, connection);
             try
             {
                 connection.Open();
