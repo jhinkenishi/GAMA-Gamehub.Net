@@ -196,11 +196,11 @@
     <Compile Include="view\AdminDeleteUser.Designer.cs">
       <DependentUpon>AdminDeleteUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\AdminEditProduct.cs">
+    <Compile Include="view\AdminEditGame.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="view\AdminEditProduct.Designer.cs">
-      <DependentUpon>AdminEditProduct.cs</DependentUpon>
+    <Compile Include="view\AdminEditGame.Designer.cs">
+      <DependentUpon>AdminEditGame.cs</DependentUpon>
     </Compile>
     <Compile Include="view\AdminEditUser.cs">
       <SubType>UserControl</SubType>
@@ -291,8 +291,8 @@
     <EmbeddedResource Include="view\AdminDeleteUser.resx">
       <DependentUpon>AdminDeleteUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\AdminEditProduct.resx">
-      <DependentUpon>AdminEditProduct.cs</DependentUpon>
+    <EmbeddedResource Include="view\AdminEditGame.resx">
+      <DependentUpon>AdminEditGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\AdminEditUser.resx">
       <DependentUpon>AdminEditUser.cs</DependentUpon>

@@ -144,7 +144,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(391, 56);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Edit Product";
+            this.button4.Text = "Edit Game";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -174,7 +174,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(391, 52);
             this.button6.TabIndex = 5;
-            this.button6.Text = "Delete Product";
+            this.button6.Text = "Delete Game";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 

@@ -50,7 +50,7 @@ namespace GAMA_Gamehub.Net.view.controls
         private void button4_Click(object sender, EventArgs e)
         {
             managePanel.Controls.Clear();
-            managePanel.Controls.Add(new AdminEditProduct());
+            managePanel.Controls.Add(new AdminEditGame());
         }
 
         private void button5_Click(object sender, EventArgs e)

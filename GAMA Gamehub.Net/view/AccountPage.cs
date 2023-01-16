@@ -31,5 +31,13 @@ namespace GAMA_Gamehub.Net.view.controls
             context.Controls.Clear();
             context.Controls.Add(new Homepage(context));
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            context.SetStatus(Context.LoginStatus.LOGOFF);
+            context.SetLogonUsername("");
+            context.Controls.Clear();
+            context.Controls.Add(new Homepage(context));
+        }
     }
 }

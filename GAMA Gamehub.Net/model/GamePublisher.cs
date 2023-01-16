@@ -18,7 +18,11 @@ namespace GAMA_Gamehub.Net.model
             this.gameId = gameId;
             this.publisherId = publisherId;
         }
-
+        public GamePublisher( int gameId, int publisherId)
+        {
+            this.gameId = gameId;
+            this.publisherId = publisherId;
+        }
         public int Id { get => id; set => id = value; }
         public int GameId { get => gameId; set => gameId = value; }
         public int PublisherId { get => publisherId; set => publisherId = value; }

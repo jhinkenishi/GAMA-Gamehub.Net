@@ -134,16 +134,17 @@ namespace GAMA_Gamehub.view.panel
            // reader.Close();
 
             reader = database.QueryFirstRow("SELECT * FROM image");
-
             images.Clear();
             while (reader.Read())
             {
                 images.Add(new GGImage(int.Parse(reader[0].ToString()), reader[1].ToString()));
             }
             //reader.Close();
+            reader.Close();
 
             reader = database.QueryFirstRow("SELECT * FROM game_image");
             gameImages.Clear();
+
             while (reader.Read())
             {
                 gameImages.Add(new GameImage(int.Parse(reader[0].ToString()), int.Parse(reader[1].ToString()), int.Parse(reader[2].ToString())));

@@ -38,6 +38,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +81,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel1.Controls.Add(this.btnLogout);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(234, 3);
@@ -159,6 +161,18 @@
             this.comboBox1.Size = new System.Drawing.Size(222, 21);
             this.comboBox1.TabIndex = 10;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLogout.Location = new System.Drawing.Point(3, 156);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(222, 23);
+            this.btnLogout.TabIndex = 11;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // AccountPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,5 +201,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

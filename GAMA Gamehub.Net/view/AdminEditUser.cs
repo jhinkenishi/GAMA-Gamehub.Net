@@ -16,5 +16,10 @@ namespace GAMA_Gamehub.Net.view.controls
         {
             InitializeComponent();
         }
+
+        private void AdminEditUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
